@@ -1,38 +1,215 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app-container {
   min-height: 100vh;
+  background-color: #e8f5e9;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+/* Language Switcher */
+.language-switcher {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.lang-button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #000;
+  color: #fff;
+}
+
+.lang-button.active {
+  background-color: #fff;
+  color: #000;
+}
+
+.lang-button:hover {
+  opacity: 0.8;
+}
+
+/* Panels */
+.panel {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Welcome Panel */
+.welcome-panel {
+  margin-top: 60px;
+}
+
+.logo {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.welcome-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+  margin: 0 0 15px 0;
+  line-height: 1.3;
+}
+
+.tagline {
+  font-size: 16px;
+  color: #000;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Setup Panel */
+.setup-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.panel-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 15px 0;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 8px;
 }
 
-.App-link {
-  color: #61dafb;
+.icon {
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.help-icon {
+  color: #f44336;
+  font-weight: bold;
+}
+
+.gear-icon {
+  color: #666;
+}
+
+.panel-instruction {
+  font-size: 16px;
+  color: #000;
+  margin: 0 0 25px 0;
+}
+
+.setup-button {
+  background-color: #000;
+  color: #4caf50;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.setup-button:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.setup-button:active {
+  transform: translateY(0);
+}
+
+/* Help Panel */
+.help-panel {
+  text-align: left;
+}
+
+.help-panel .panel-title {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.steps-list {
+  margin: 20px 0 0 0;
+  padding-left: 25px;
+  color: #000;
+}
+
+.steps-list li {
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+  margin-top: auto;
+  padding: 20px;
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 15px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .language-switcher {
+    top: 15px;
+    right: 15px;
+  }
+
+  .lang-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .panel {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .welcome-title {
+    font-size: 24px;
+  }
+
+  .panel-title {
+    font-size: 20px;
+  }
+
+  .setup-button {
+    padding: 12px 30px;
+    font-size: 16px;
+    min-width: 180px;
   }
 }
