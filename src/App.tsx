@@ -44,7 +44,7 @@ function App() {
   const t = translations[language];
 
   const handleSetupClick = () => {
-    const setupUrl = 'http://192.168.1.1';
+    const setupUrl = 'http://192.168.100.1';
     
     if (setupWindowRef.current && !setupWindowRef.current.closed) {
       setupWindowRef.current.focus();
